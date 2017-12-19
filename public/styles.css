@@ -7,16 +7,22 @@
 	background-color:#6441A4;
 }
 
-body 	{display:grid;}
-
 nav 	{border-bottom:2px silver solid;}
+
+button {
+	background-color:silver;
+	width:150px;
+	font-weight:600;
+	font-size:1rem;
+}
 
 .flex 	{display:flex; align-items:center; justify-content:center;}
 
 
-
 /* SECTION STYLES
 ============================================================================= */
+
+.section--margin-top {margin-top:1.5rem;}
 
 /* ------ Search Box ---------------------- */
 
