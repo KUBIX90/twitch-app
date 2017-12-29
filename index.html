@@ -2,14 +2,15 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<meta name = "viewport" content="width=device-width, initial-scale = 1.0"/>
-	<link href = "https://fonts.googleapis.com/css?family=Yantramanav:100,400" rel="stylesheet"/>
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href = "https://fonts.googleapis.com/css?family=Yantramanav:100,400" rel="stylesheet">
 	<link href = "public/styles.css" rel="stylesheet">
 	<title>Twitch TV App</title>
 </head>
 <body>
 	<nav>
-		<div class = "flex">
+		<div class = "flex--center flex--aligned">
 			<figure>
 				<img src = "public/images/logo.png" 
 					 alt = "Twitch Logo" 
@@ -25,13 +26,25 @@
 		</div>
 	</nav>
 	
-	<section class = "flex section--margin-top">
-		<button id = "button_all">All</button>
-		<button id = "button_online">Online</button>
-		<button id = "button_offline">Offline</button>
+	<section class = "flex--center section--margin-top">
+		<button id = "channels_all" class = "channels__buttons--margin-xs">All</button>
+		<button id = "channels_online" class = "channels__buttons--margin-xs">Online</button>
+		<button id = "channels_offline" class = "channels__buttons--margin-xs">Offline</button>
 	</section>
 	
-	
+	<section id = "twitch_channels">
+		<article class = "flex--aligned">
+			<img id = "logo"/>
+				<section id = "text">
+					<a id = "title"></a>
+					<p id = "description"></p>
+					<p id = "followers"></p>
+				</section>
+				<figure>
+					<img id = "logo2" src = "public/images/online.png"/>
+				</figure>
+		</article>
+	</section>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script> 
