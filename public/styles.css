@@ -60,6 +60,8 @@ article > * {background-color:white; font-size:.9rem;}
 }
 
 #logo2 {
+	position:relative;
+	left:15px;
 	height:10%;
 	width:10%;
 }
