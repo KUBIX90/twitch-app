@@ -10,6 +10,7 @@ function showChannels(){
 	for (var i = 0; i < user.length; i++){
 		$.get(twitchChannel + user[i], function(data){
 			$.get(twitchStream + user[i], function(val){
+				console.log(val);
 				$("#twitch_channels").append(
 					"<article class = 'flex--aligned'>" +
 						"<img id = 'logo'" + "src = '" + data.logo + "' alt = '" + data.display_name + "'/>" +
@@ -20,6 +21,9 @@ function showChannels(){
 						"</section>" +
 					"</article>"
 				);
+			if(val.stream == null){
+				$("#twitch_channels").css("color", "red");
+			}
 			})
 		})
 	};
