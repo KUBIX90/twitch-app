@@ -9,7 +9,7 @@
 function showChannel(username){
 		$.get(twitchChannel + username, function(data){
 				$("#twitch_channels").append(
-					"<article id = " + username + " class = 'flex--aligned'>" +
+					"<article id = " + username + " class = 'flex--aligned channels--margin-bottom'>" +
 						"<img id = 'logo'" + "src = '" + data.logo + "' alt = '" + data.display_name + "'/>" +
 						"<section id = 'text'>" +
 							"<a id = 'title'" + "href = " + data.url + " target = _blank>" + data.display_name + "</a>" +
@@ -24,7 +24,6 @@ function showChannel(username){
 				} else {$("#" + username).css("color", "green")}
 			})
 		})
-	
 };
 
 	

@@ -18,6 +18,7 @@ body	{background-image: linear-gradient(to right, purple, black)}
 ============================================================================= */
 
 .section--margin-top {margin-top:1.5rem;}
+.section--margin-xs{margin:.1rem;}
 
 /* ------ Search Box ---------------------- */
 
@@ -30,10 +31,6 @@ body	{background-image: linear-gradient(to right, purple, black)}
 }
 
 /* ------ Channel Buttons ----------------- */
-
-.channels__buttons--margin-xs{
-	margin:.1rem;
-}
 
 button {
 	background-color:rgba(192, 0, 192, .1);
@@ -49,11 +46,12 @@ button {
 
 article {
 	background-color:white;
-	border:2px solid silver;
 	margin:0 auto;
 	padding:5px;
 	max-width:400px;
 }
+
+.channels--margin-bottom {margin:.25rem auto;}
 
 article > * {background-color:white; font-size:.9rem;}
 
@@ -61,13 +59,6 @@ article > * {background-color:white; font-size:.9rem;}
 	height:15%;
 	width:15%;
 	border-radius:50%;
-}
-
-#logo2 {
-	position:relative;
-	left:15px;
-	height:10%;
-	width:10%;
 }
 
 #text{
