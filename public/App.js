@@ -6,11 +6,8 @@
 				"freecodecamp", "storbeck", "habathcx", 
 				"RobotCaleb", "noobs2ninjas"];
 	
-function showChannels(){
-	for (var i = 0; i < user.length; i++){
-		$.get(twitchChannel + user[i], function(data){
-			$.get(twitchStream + user[i], function(val){
-				console.log(val);
+function showChannel(username){
+		$.get(twitchChannel + username, function(data){
 				$("#twitch_channels").append(
 					"<article class = 'flex--aligned'>" +
 						"<img id = 'logo'" + "src = '" + data.logo + "' alt = '" + data.display_name + "'/>" +
@@ -21,24 +18,21 @@ function showChannels(){
 						"</section>" +
 					"</article>"
 				);
-			if(val.stream == null){
-				$("#twitch_channels").css("color", "red");
-			}
+			$.get(twitchStream + username, function(val){
+				//if statement regarding if theyre online or not
+				console.log(val);
 			})
 		})
-	};
+	
 };
 
 	
 //////////////////////////////////////////////////////////////////
 
 $(document).ready(function(){
-
-	showChannels();
-
-	$("#channels_all").click(function(){
-		$("#twitch_channels").empty();
-		showChannels();
-	});
-
+	
+	for (i = 0; user.length >= i; i ++){
+		showChannel(user[i]);
+	}
+	
 });
