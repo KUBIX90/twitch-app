@@ -9,7 +9,6 @@
 html body {height:100%;}
 
 body	{background-image: linear-gradient(to right, purple, black)}
-nav 	{border-bottom:2px silver solid;}
 
 .flex--aligned 	{display:flex; align-items:center;}
 .flex--center 	{display:flex; justify-content:center;}

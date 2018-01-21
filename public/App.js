@@ -9,7 +9,7 @@
 function showChannel(username){
 		$.get(twitchChannel + username, function(data){
 				$("#twitch_channels").append(
-					"<article class = 'flex--aligned'>" +
+					"<article id = " + username + " class = 'flex--aligned'>" +
 						"<img id = 'logo'" + "src = '" + data.logo + "' alt = '" + data.display_name + "'/>" +
 						"<section id = 'text'>" +
 							"<a id = 'title'" + "href = " + data.url + " target = _blank>" + data.display_name + "</a>" +
@@ -19,8 +19,9 @@ function showChannel(username){
 					"</article>"
 				);
 			$.get(twitchStream + username, function(val){
-				//if statement regarding if theyre online or not
-				console.log(val);
+				if(val.stream === null){
+					$("#" + username).css("color", "red")
+				} else {$("#" + username).css("color", "green")}
 			})
 		})
 	

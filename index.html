@@ -9,26 +9,22 @@
 	<title>Twitch TV App</title>
 </head>
 <body>
-	<nav>
-		<div class = "flex--center flex--aligned">
-			<input id = "search-box"
-				   class = "search-box"
-				   type = "search"
-				   name = "search"
-				   placeholder = "Search twitch users..">
-			</input>
-		</div>
-	</nav>
-	
 	<section class = "flex--center section--margin-top">
 		<button id = "channels_all" class = "channels__buttons--margin-xs">All</button>
 		<button id = "channels_online" class = "channels__buttons--margin-xs">Online</button>
 		<button id = "channels_offline" class = "channels__buttons--margin-xs">Offline</button>
 	</section>
 	
-	<section id = "twitch_channels">
+	<section class = "flex--center flex--aligned channels__buttons--margin-xs">
+			<input id = "search-box"
+				   class = "search-box"
+				   type = "search"
+				   name = "search"
+				   placeholder = "Search twitch users..">
+			</input>
+	</section>
 	
-		
+	<section id = "twitch_channels">
 	</section>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
