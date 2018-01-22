@@ -44,16 +44,26 @@ button {
 
 /* ------ Channel Box Styling ---------------------- */
 
+.channels--margin {margin:.25rem auto;}
+
 article {
 	background-color:white;
 	margin:0 auto;
 	padding:5px;
-	max-width:400px;
+	max-width:450px;
 }
 
-.channels--margin-bottom {margin:.25rem auto;}
+#title {
+	text-decoration:none;
+	font-weight:200;
+	color:purple;
+	font-size:1.6rem;
+}
 
-article > * {background-color:white; font-size:.9rem;}
+#title:hover {font-weight:400;}
+
+
+#followers {font-size:.85rem; font-style:italic; color:grey;}
 
 #logo {
 	height:15%;
