@@ -20,9 +20,9 @@ function showChannel(username){
 					"</article>"
 				);
 			$.get(twitchStream + username, function(val){
-				/*if(val.stream === null){
-					$("#" + username).css("box-shadow", "3px red solid")
-				} else {$("#" + username).css("border", "3px green solid")}*/
+				if(val.stream === null){
+					$("#" + username).css("box-shadow", "5px 0px 10px red")
+				} else {$("#" + username).css("box-shadow", "5px 0px 10px green")}
 			})
 		})
 };
