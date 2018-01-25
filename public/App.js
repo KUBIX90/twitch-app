@@ -16,16 +16,18 @@ function showChannel(username){
 							"<p id = 'description'>" + data.game + "</p>" +
 							"<p id = 'followers'>" + "Followers " + data.followers + "</p>" +
 						"</section>" +
-
+						"<p></p>" +
 					"</article>"
 				);
-			$.get(twitchStream + username, function(val){
+			$.get(twitchStream + username, function(val){		
 				if(val.stream === null){
-					$("#" + username).css("box-shadow", "5px 0px 10px red");
-
-				} else {$("#" + username).css("box-shadow", "5px 0px 10px green");
-
-						}
+                    $("#" + username).css("box-shadow", "5px 0px 10px red");
+                    $("#" + username + ">p").text("Offline")
+                                .css("color","red");
+                } else {$("#" + username).css("box-shadow", "5px 0px 10px green");
+                        $("#" + username + ">p").text("Online")
+                                    .css("color","green");
+                        }
 			})
 		})
 };
