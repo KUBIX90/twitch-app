@@ -8,21 +8,24 @@
 	
 function showChannel(username){
 		$.get(twitchChannel + username, function(data){
-			console.log(data);
 				$("#twitch_channels").append(
-					"<article id = " + username + " class = 'flex--aligned channels--margin'>" +
+					"<article id = " + username + " class = 'flex channels--margin flex--aligned-center'>" +
 						"<img id = 'logo'" + "src = '" + data.logo + "' alt = '" + data.display_name + "'/>" +
 						"<section id = 'text'>" +
 							"<a id = 'title'" + "href = " + data.url + " target = _blank>" + data.display_name + "</a>" +
 							"<p id = 'description'>" + data.game + "</p>" +
 							"<p id = 'followers'>" + "Followers " + data.followers + "</p>" +
 						"</section>" +
+
 					"</article>"
 				);
 			$.get(twitchStream + username, function(val){
 				if(val.stream === null){
-					$("#" + username).css("box-shadow", "5px 0px 10px red")
-				} else {$("#" + username).css("box-shadow", "5px 0px 10px green")}
+					$("#" + username).css("box-shadow", "5px 0px 10px red");
+
+				} else {$("#" + username).css("box-shadow", "5px 0px 10px green");
+
+						}
 			})
 		})
 };
@@ -35,6 +38,11 @@ $(document).ready(function(){
 		showChannel(user[i]);
 	}
 	
-	
-	
+	$("#channels_all").click(function(){
+		$("#twitch_channels").empty();
+		
+		for (i = 0; user.length > i; i ++){
+			showChannel(user[i]);
+		};
+	});
 });

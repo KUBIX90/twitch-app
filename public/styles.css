@@ -8,17 +8,18 @@
 
 html body {height:100%;}
 
-body	{background-image: linear-gradient(to right, purple, black)}
+body	{background-image: linear-gradient(to right, purple, black);}
 
-.flex--aligned 	{display:flex; align-items:center;}
-.flex--center 	{display:flex; justify-content:center;}
+.flex 					{display:flex;}
+.flex--center 			{justify-content:center;}
+.flex--aligned-center 	{align-items:center;}
 
 
 /* SECTION STYLES
 ============================================================================= */
 
-.section--margin-top {margin-top:1.5rem;}
-.section--margin-xs{margin:.1rem;}
+.section__buttons--margin-top {margin-top:1.5rem;}
+.section--margin-xs			  {margin:.1rem;}
 
 /* ------ Search Box ---------------------- */
 
@@ -62,7 +63,6 @@ article {
 
 #title:hover {font-weight:400;}
 
-
 #followers {font-size:.85rem; font-style:italic; color:grey;}
 
 #logo {
@@ -71,9 +71,7 @@ article {
 	border-radius:50%;
 }
 
-#text{
-	padding-left:.5rem;
-}
+#text {padding-left:.5rem; width:65%}
 
 /* MOBILE RESPONSIVENESS
 ============================================================================= */
