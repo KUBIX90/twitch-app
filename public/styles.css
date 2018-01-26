@@ -14,13 +14,12 @@ body	{background-image: linear-gradient(to right, purple, black);}
 .flex--center 			{justify-content:center;}
 .flex--aligned-center 	{align-items:center;}
 
-
 /* SECTION STYLES
 ============================================================================= */
 
 .section__buttons--margin-top {margin-top:1.5rem;}
-.section--margin-xs			  {margin:.1rem;}
-
+.section--margin-xs			  {margin:.25rem;}
+ 
 /* ------ Search Box ---------------------- */
 
 .search-box {height:30px; 
@@ -45,7 +44,7 @@ button {
 
 /* ------ Channel Box Styling ---------------------- */
 
-.channels--margin {margin:.5rem auto;}
+.channel--margin {margin:.5rem auto;}
 
 article {
 	background-color:white;
@@ -72,6 +71,10 @@ article {
 }
 
 #text {padding-left:.5rem; width:65%}
+
+.channel--display-none {display:none;}
+
+
 
 /* MOBILE RESPONSIVENESS
 ============================================================================= */

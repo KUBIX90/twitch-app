@@ -9,7 +9,7 @@
 function showChannel(username){
 		$.get(twitchChannel + username, function(data){
 				$("#twitch_channels").append(
-					"<article id = " + username + " class = 'flex channels--margin flex--aligned-center'>" +
+					"<article id = " + username + " class = 'flex channel--margin flex--aligned-center'>" +
 						"<img id = 'logo'" + "src = '" + data.logo + "' alt = '" + data.display_name + "'/>" +
 						"<section id = 'text'>" +
 							"<a id = 'title'" + "href = " + data.url + " target = _blank>" + data.display_name + "</a>" +
@@ -23,7 +23,7 @@ function showChannel(username){
 				if(val.stream === null){
                     $("#" + username).css("box-shadow", "5px 0px 10px red");
                     $("#" + username + ">p").text("Offline")
-                                .css("color","red");
+											.css("color","red");
                 } else {$("#" + username).css("box-shadow", "5px 0px 10px green");
                         $("#" + username + ">p").text("Online")
                                     .css("color","green");
@@ -31,20 +31,47 @@ function showChannel(username){
 			})
 		})
 };
+
+function showOnlineChannels(username){
+	$("#" + username).removeClass("channel--display-none");
+	$.get(twitchStream + username, function(data){
+		if(data.stream === null){
+			$("#" + username).addClass("channel--display-none");
+		}
+	});
+}
+
+function showOfflineChannels(username){
+	$("#" + username).removeClass("channel--display-none");
+	$.get(twitchStream + username, function(data){
+		if(data.stream !== null){
+			$("#" + username).addClass("channel--display-none");
+		}
+	});
+}
 	
 //////////////////////////////////////////////////////////////////
 
 $(document).ready(function(){
-	
 	for (i = 0; user.length > i; i ++){
 		showChannel(user[i]);
 	}
-	
-	$("#channels_all").click(function(){
-		$("#twitch_channels").empty();
-		
-		for (i = 0; user.length > i; i ++){
-			showChannel(user[i]);
-		};
-	});
+});
+
+$("#channels_all").click(function(){
+	for (i = 0; user.length > i; i ++){
+		$("#" + user[i]).removeClass("channel--display-none");
+	};
+});
+
+$("#channels_online").click(function(){
+	for(i = 0; user.length > i; i ++){
+		showOnlineChannels(user[i]);
+	}
+});
+
+$("#channels_offline").click(function(){
+	for(i = 0; user.length > i; i ++){
+		showOfflineChannels(user[i]);
+	}
 });
