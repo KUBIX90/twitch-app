@@ -8,7 +8,7 @@
 
 html body {height:100%;}
 
-body	{background-image: linear-gradient(to right, purple, black);}
+body	  {background-image: linear-gradient(to right, purple, black);}
 
 .flex 					{display:flex;}
 .flex--center 			{justify-content:center;}
@@ -44,35 +44,30 @@ button {
 
 /* ------ Channel Box Styling ---------------------- */
 
-.channel--margin {margin:.5rem auto;}
+.channel--margin 	   {margin:.5rem auto;}
+.channel--display-none {display:none;}
 
 article {
 	background-color:white;
-	margin:0 auto;
 	padding:5px;
 	max-width:450px;
 }
 
-#title {
+#channel_title {
 	text-decoration:none;
 	font-weight:200;
 	color:purple;
 	font-size:1.6rem;
 }
 
-#followers {font-size:.85rem; font-style:italic; color:grey;}
+#channel_info 	   {padding-left:.5rem; width:65%}
+#channel_followers {font-size:.85rem; font-style:italic; color:grey;}
 
-#logo {
+#channel_icon {
 	height:15%;
 	width:15%;
 	border-radius:50%;
 }
-
-#text {padding-left:.5rem; width:65%}
-
-.channel--display-none {display:none;}
-
-
 
 /* MOBILE RESPONSIVENESS
 ============================================================================= */
@@ -82,5 +77,5 @@ article {
 }
 
 @media only screen and (min-width: 800px) {
-	#title:hover {font-weight:400;}
+	#channel_title:hover {font-weight:400;}
 }

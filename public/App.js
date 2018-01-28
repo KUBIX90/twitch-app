@@ -8,14 +8,13 @@ var user = ["ESL_SC2", "OgamingSC2", "cretetion",
 
 function showChannel(username){
 		$.get(twitchChannel + username, function(data){
-			var userTitle = function 
 				$("#twitch_channels").append(
-					"<article id = " + username + " class = 'flex channel--margin flex--aligned-center'>" +
-						"<img id = 'logo'" + "src = '" + data.logo + "' alt = '" + data.display_name + "'/>" +
-						"<section id = 'text'>" +
-							"<a id = 'title'" + "href = " + data.url + " target = _blank " + "at = " + data.display + ">" + data.display_name + "</a>" +
-							"<p id = 'description'>" + data.game + "</p>" +
-							"<p id = 'followers'>" + "Followers " + data.followers + "</p>" +
+					"<article id = " + username + " class = 'flex flex--aligned-center channel--margin'>" +
+						"<img id = 'channel_icon'" + "src = '" + data.logo + "' alt = '" + data.display_name + "'/>" +
+						"<section id = 'channel_info'>" +
+							"<a id = 'channel_title'" + "href = " + data.url + " target = _blank " + "at = " + data.display + ">" + data.display_name + "</a>" +
+							"<p id = 'channel_description'>" + data.game + "</p>" +
+							"<p id = 'channel_followers'>" + "Followers " + data.followers + "</p>" +
 						"</section>" +
 						"<p></p>" +
 					"</article>"
