@@ -5,7 +5,7 @@ var twitchUser = "https://wind-bow.glitch.me/twitch-api/users/";
 var user = ["ESL_SC2", "OgamingSC2", "cretetion", 
 			"freecodecamp", "Miss_Rage", "Pandagirl91", 
 			"RobotCaleb", "noobs2ninjas"];
-
+	
 function showChannel(username){
 		$.get(twitchChannel + username, function(data){
 				$("#twitch_channels").append(
@@ -53,7 +53,6 @@ function showOfflineChannels(username){
 //////////////////////////////////////////////////////////////////
 
 $(document).ready(function(){
-	
 	for (i = 0; user.length > i; i ++){
 		showChannel(user[i]);
 	}
@@ -80,7 +79,15 @@ $("#channels_offline").click(function(){
 //Search channels upon typing
 $("#search-box").keyup(function(){
 	var inputValue = $("#search-box").val().toLowerCase();
+	var userLowerCase = user.map(function(x){return x.toLowerCase();});
 	
-	//Get title text and compare to input value?
+	for(i = 0; user.length > i; i ++){
+		if(userLowerCase[i].indexOf(inputValue) !== -1){
+			console.log(userLowerCase[i]);
+			$("#" + user[i]).removeClass("channel--display-none");
+		} else {
+			$("#" + user[i]).addClass("channel--display-none");
+		}
+	}
 });
 
