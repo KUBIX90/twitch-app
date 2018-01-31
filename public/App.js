@@ -8,17 +8,16 @@ var user = ["ESL_SC2", "OgamingSC2", "cretetion",
 	
 function showChannel(username){
 		$.get(twitchChannel + username, function(data){
-				$("#twitch_channels").append(
-					"<article id = " + username + " class = 'flex flex--aligned-center channel--margin'>" +
-						"<img id = 'channel_icon'" + "src = '" + data.logo + "' alt = '" + data.display_name + "'/>" +
-						"<section id = 'channel_info'>" +
-							"<a id = 'channel_title'" + "href = " + data.url + " target = _blank " + "at = " + data.display + ">" + data.display_name + "</a>" +
-							"<p id = 'channel_description'>" + data.game + "</p>" +
-							"<p id = 'channel_followers'>" + "Followers " + data.followers + "</p>" +
-						"</section>" +
-						"<p></p>" +
-					"</article>"
-				);
+				$("#twitch_channels").append(`
+				<article id = '${username}' class = 'flex flex--aligned-center channel--margin'>
+					<img id = 'channel_icon' src = '${data.logo}' alt = 'data.display_name'/>
+					<section id = 'channel_info'>
+						<a id = 'channel_title' href = ${data.url} target = '_blank'>${data.display_name}</a>
+						<p id = 'channel_description'>${data.game}</p>
+						<p id = 'channel_followers'>Followers " ${data.followers}</p>
+					</section>
+					<p></p>
+				</article>`);
 			$.get(twitchStream + username, function(val){		
 				if(val.stream === null){
                     $("#" + username).css("box-shadow", "5px 0px 10px red");
@@ -76,7 +75,6 @@ $("#channels_offline").click(function(){
 	}
 });
 
-//Search channels upon typing
 $("#search-box").keyup(function(){
 	var inputValue = $("#search-box").val().toLowerCase();
 	var userLowerCase = user.map(function(x){return x.toLowerCase();});
