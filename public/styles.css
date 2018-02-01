@@ -22,8 +22,8 @@ body	  {background-image: linear-gradient(to right, purple, black);}
  
 /* ------ Search Box ---------------------- */
 
-.search-box {height:30px; 
-			 width:150px;
+#search-box {height:35px; 
+			 width:200px;
 			 padding-left:.5rem;
 			 border:1px solid silver;
 			 border-radius:5px;
@@ -41,6 +41,8 @@ button {
 	width:150px;
 	height:100px;
 }
+
+button:hover{color:red;}
 
 /* ------ Channel Box Styling ---------------------- */
 
