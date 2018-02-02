@@ -11,7 +11,7 @@ function twitchChannel(username){
 				<article id = '${username}' class = 'flex flex--aligned-center channel--margin'>
 					<img id = 'channel_icon' src = '${data.logo}' alt = 'data.display_name'/>
 					<section id = 'channel_info'>
-						<a id = 'channel_title' href = ${data.url} target = '_blank'>${data.display_name}</a>
+						<a id = 'channel_title' href = ${data.url} target = '_blank' rel="noopener">${data.display_name}</a>
 						<p id = 'channel_description'>${data.game}</p>
 						<p id = 'channel_followers'>Followers ${data.followers}</p>
 					</section>
@@ -65,13 +65,13 @@ $("#search-box").keyup(function(){
     return x.toLowerCase();
   });
 	
-	for(i = 0; user.length > i; i ++){
-		if(userLowerCase[i].indexOf(inputValue) !== -1){
-			console.log(userLowerCase[i]);
-			$("#" + user[i]).removeClass("channel--display-none");
-		} else {
-			$("#" + user[i]).addClass("channel--display-none");
-		}
+for(i = 0; user.length > i; i ++){
+	if(userLowerCase[i].indexOf(inputValue) !== -1){
+		console.log(userLowerCase[i]);
+		$("#" + user[i]).removeClass("channel--display-none");
+	} else {
+		$("#" + user[i]).addClass("channel--display-none");
 	}
+}
 });
 
