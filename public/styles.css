@@ -40,9 +40,10 @@ button {
 	font-weight:200;
 	width:150px;
 	height:100px;
+	transition:transform 100ms ease-in;
 }
 
-button:hover{color:red;}
+button:hover{transform: scale(1.05);}
 
 /* ------ Channel Box Styling ---------------------- */
 
